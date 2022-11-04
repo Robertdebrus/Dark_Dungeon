@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 //generate room mask
-public class Room : Plain
+public class Room : Plane
 {
    
 
@@ -28,7 +28,7 @@ public class Room : Plain
     public void init()//call me please
     {
 
-        //set offsit
+        //set offset
         tileOffsetX = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>().tileOffsetX;
         tileOffsetY = GameObject.FindGameObjectWithTag("Map").GetComponent<Map>().tileOffsetY;
 
@@ -46,16 +46,17 @@ public class Room : Plain
 
         
 
-        buildRoomMask();
+        BuildRoomMask();
+        AutoResizePlane();
 
     }
 
-    public void buildRoomMask()
+    public void BuildRoomMask()
     {
         //generating room mask
         width = floorCount;
         height = width;
-        buildPlain();//allocate room mask arr
+        buildPlane();//allocate room mask arr
 
         //internally set tile 0s location room center
         tileArr[0].GetComponent<Tile>().locationx = floorCount / 2;
@@ -158,7 +159,7 @@ public class Room : Plain
     }
 
     
-
+    
 
     public void placeTiles()
     {

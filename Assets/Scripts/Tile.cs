@@ -10,9 +10,11 @@ public class Tile : MonoBehaviour
     public int neighborCount = 0;
     public int tileNumber;
     public bool isEdge = true;
+    
 
     public void checkNeighbors(int[][] roomMask)
     {
+        
         neighborCount = 0;
         for(int i = 0; i < adjList.Length; i++)
         {
@@ -70,10 +72,6 @@ public class Tile : MonoBehaviour
         }
     }
 
-    public void updateNeighbors(Tile[] neighbors)
-    {
-
-    }
 
 
 }

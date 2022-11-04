@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 
 
-public class Map : Plain
+public class Map : Plane
 {
     //offset for tile GameObject Placement
     public int tileOffsetX;
@@ -27,7 +27,7 @@ public class Map : Plain
     void Awake()
     {
 
-        buildPlain();//build location array for map
+        buildPlane();//build location array for map
         
 
         //instantiate rooms, and set room sizes //Building mask
