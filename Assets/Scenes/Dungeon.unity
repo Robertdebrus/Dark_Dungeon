@@ -173,8 +173,8 @@ MonoBehaviour:
   tileOffsetY: 10
   roomRef: {fileID: 8199375638035516181, guid: e64b29622ca9cbe419fddd5fded6c029, type: 3}
   roomCount: 1
-  maxRoomSize: 15
-  minRoomSize: 15
+  maxRoomSize: 20
+  minRoomSize: 20
   TileCount: 0
   deactivateRoomByIndex: -1
 --- !u!1 &831720035

@@ -28,13 +28,16 @@ public class Plane : MonoBehaviour
 
     protected void buildPlane()
     {
+        int x = 2 * width;
+        int y = 2 * height;
+        Debug.Log("mask Width is " + x + " mask Height is " + y);
         if(width > 0 && height > 0)
         {
-            coordsObjIdentifier = new int[width][];
-            for (int i = 0; i < width; i++)
+            coordsObjIdentifier = new int[x][];
+            for (int i = 0; i < x; i++)
             {
-                coordsObjIdentifier[i] = new int[height];
-                for(int j = 0; j < height; j++)
+                coordsObjIdentifier[i] = new int[y];
+                for(int j = 0; j < y; j++)
                     coordsObjIdentifier[i][j] = -1;
             }
 
@@ -42,7 +45,9 @@ public class Plane : MonoBehaviour
         }
     }
 
-
+    //finds the furthest tiles then uses those to make a second mask with the new size
+    // once the new mask is made, it is filled with the old mask data starting with the 
+    //x position of the furthest west tile, and the z position of the furthest north.
     protected void AutoResizePlane()
     {
         FindFurthest();//find the furthest tile positions on mask to resize
@@ -76,6 +81,7 @@ public class Plane : MonoBehaviour
 
     }
 
+    //FindFurthest looks for the furthest North,East,South,West tiles to be used to cut the mask size down
     private void FindFurthest()
     {
         //furthest points initially oposite point on mask they represent but set outside range

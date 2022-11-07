@@ -47,6 +47,8 @@ public class Map : Plane
            // placeRoomMask(rooms[i].GetComponent<Room>());
         }
 
+        
+
     }
 
     public void placeRoomMask(Room room)//not working
